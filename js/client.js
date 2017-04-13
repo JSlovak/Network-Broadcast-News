@@ -2,11 +2,8 @@
 
 const net = require('net');
 
-const client = net.connect({port:3000}, ()=>{
-  console.log("You've entered chatroom at PORT: 3000.");
-  client.write("Someone new has entered the chatroom.");
-
-  let username = null;
+const client = net.connect({port:3000, host:"10.0.1.3"}, ()=>{
+  // client.write("Someone new has entered the chatroom.");
 
   process.stdin.on('data', (chunk) =>{
     // console.log(chunk.toString());
